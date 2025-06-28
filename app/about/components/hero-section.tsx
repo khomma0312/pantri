@@ -13,8 +13,8 @@ export const HeroSection = () => (
       <p className="text-base font-normal mb-6">
         Pantriは、食品ロスを削減し、バランスのとれた食事を提案する、食事プランと食品管理ウェブアプリです。
       </p>
-      <Button className="text-lg font-medium px-7 py-5 rounded-md text-primary-foreground">
-        使い始める
+      <Button className="text-xl font-medium px-10 py-6 rounded-lg text-primary-foreground">
+        今すぐ試す
       </Button>
     </div>
   </section>
