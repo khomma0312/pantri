@@ -2,7 +2,7 @@ import { HowToUseCard } from "@/components/how-to-use-card";
 import { StepArrowColumn } from "./step-arrow-column";
 
 export const HowToUseSection = () => (
-  <section className="py-16">
+  <section className="py-10">
     <div className="text-left max-w-3xl mb-10">
       <h2 className="text-2xl font-black mb-4 lg:text-4xl">使い方</h2>
       <p className="text-base">

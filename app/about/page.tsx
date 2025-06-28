@@ -7,13 +7,29 @@ import { ProblemSolvingSection } from "./components/problem-solving-section";
 
 export default function AboutPage() {
   return (
-    <div className="bg-stone-50 text-gray-900">
+    <div className="text-gray-900">
       <Header />
-      <main className="container mx-auto px-4 md:px-6 py-12">
-        <HeroSection />
-        <FeaturesSection />
-        <HowToUseSection />
-        <ProblemSolvingSection />
+      <main>
+        <div className="bg-white">
+          <div className="container mx-auto px-4 md:px-6 py-12">
+            <HeroSection />
+          </div>
+        </div>
+        <div className="bg-gray-50">
+          <div className="container mx-auto px-4 md:px-6 py-6">
+            <FeaturesSection />
+          </div>
+        </div>
+        <div className="bg-white">
+          <div className="container mx-auto px-4 md:px-6 py-6">
+            <HowToUseSection />
+          </div>
+        </div>
+        <div className="bg-gray-50">
+          <div className="container mx-auto px-4 md:px-6 py-6">
+            <ProblemSolvingSection />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
