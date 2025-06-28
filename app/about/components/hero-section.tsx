@@ -8,7 +8,7 @@ export const HeroSection = () => (
   >
     <div className="bg-black/30 absolute inset-0 rounded-lg"></div>
     <div className="relative max-w-4xl">
-      <h1 className="text-3xl font-black tracking-tighter mb-2 lg:text-5xl">
+      <h1 className="text-3xl font-black tracking-tighter mb-4 lg:text-5xl">
         毎日の献立作りをもっとシンプルに
       </h1>
       <p className="text-base font-normal mb-6">
