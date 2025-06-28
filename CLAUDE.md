@@ -164,6 +164,9 @@ pantri/
 │   │   │   └── [id]/
 │   │   └── family/               # 家族共有設定
 │   ├── about/                    # aboutページ
+│   ├── contact/                  # お問い合わせページ
+│   ├── privacy/                  # プライバシーポリシーページ
+│   ├── terms/                    # サービス規約ページ
 │   └── api/                      # 外部API統合（食材認識など）
 ├── components/                   # 共通UIコンポーネント
 │   ├── ui/                       # shadcn/ui コンポーネント

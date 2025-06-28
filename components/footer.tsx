@@ -6,17 +6,17 @@ export const Footer = () => (
       <div className="flex flex-col items-center gap-6">
         <div className="flex w-full flex-wrap justify-center gap-6 text-center">
           <div className="w-full sm:w-auto">
-            <Link href="#" className="text-base text-primary-800">
+            <Link href="/contact" className="text-base text-primary-800">
               お問い合わせ
             </Link>
           </div>
           <div className="w-full sm:w-auto">
-            <Link href="#" className="text-base text-primary-800">
+            <Link href="/privacy" className="text-base text-primary-800">
               プライバシーポリシー
             </Link>
           </div>
           <div className="w-full sm:w-auto">
-            <Link href="#" className="text-base text-primary-800">
+            <Link href="/terms" className="text-base text-primary-800">
               サービス規約
             </Link>
           </div>
