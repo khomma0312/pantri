@@ -289,3 +289,6 @@ pantri/
   - upgrade：バージョンアップ
   - revert：変更取り消し
     - 例: `add: brandモデルに◯◯メソッドを追加`
+- コンポーネントのインポート時は必ず `@/` プレフィックスを使用した絶対パスで参照する
+  - 例: `import { Button } from "@/shared/components/ui/button"`
+  - 相対パス（`./` や `../`）は使用しない（同一ディレクトリ内の場合を除く）
