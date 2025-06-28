@@ -14,11 +14,9 @@ export const Header = () => (
         />
         <span className="font-bold text-lg text-gray-900">Pantri</span>
       </div>
-      <nav className="hidden items-center gap-4 md:flex">
+      <nav className="flex items-center gap-4">
         <Button variant="ghost" className="text-sm font-medium text-gray-900">
-          <Link href="/login" className="">
-            ログイン
-          </Link>
+          <Link href="/login">ログイン</Link>
         </Button>
         <Button className="text-sm font-medium text-primary-foreground">
           <Link href="/signup">新規登録</Link>
