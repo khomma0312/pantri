@@ -145,10 +145,10 @@ PWAサポート、パフォーマンス最適化、分析
 
 ```
 pantri/
-├── app/                          # App Router (Next.js 15)
-│   ├── (auth)/                   # 認証関連ルートグループ
-│   │   ├── login/
-│   │   └── register/
+├── app/                          # Next.js App Router - ページとルーティング
+│   ├── (auth)/                   # 認証関連ルートグループ - ログイン・登録
+│   │   ├── login/                # ログインページ
+│   │   └── register/             # 新規登録ページ
 │   ├── (dashboard)/              # メイン機能ルートグループ
 │   │   ├── dashboard/            # ダッシュボード
 │   │   ├── ingredients/          # 食材管理
@@ -163,39 +163,71 @@ pantri/
 │   │   │   ├── search/
 │   │   │   └── [id]/
 │   │   └── family/               # 家族共有設定
-│   ├── about/                    # aboutページ
-│   └── api/                      # 外部API統合（食材認識など）
-├── components/                   # 共通UIコンポーネント
-│   ├── ui/                       # shadcn/ui コンポーネント
-│   ├── auth/                     # 認証関連コンポーネント
-│   ├── ingredients/              # 食材管理コンポーネント
-│   ├── meal-planning/            # 献立プランニングコンポーネント
-│   ├── shopping/                 # 買い物リスト関連
-│   ├── recipes/                  # レシピ関連
-│   └── layout/                   # レイアウト（header, footer, nav）
-├── lib/                          # ユーティリティとヘルパー
-│   ├── actions/                  # Server Actions
-│   │   ├── auth.ts
-│   │   ├── ingredients.ts
-│   │   ├── meal-planning.ts
-│   │   ├── shopping-lists.ts
-│   │   └── recipes.ts
-│   ├── services/                 # 外部サービス統合
-│   │   ├── aws/                  # AWS SDK統合
-│   │   ├── image-recognition/    # 食材認識API
-│   │   └── recommendation/       # 献立推奨エンジン
-│   ├── db/                       # データベース関連
-│   │   ├── schema.ts
-│   │   └── queries.ts
-│   ├── types/                    # TypeScript型定義
-│   ├── validations/              # Zodスキーマ
-│   └── utils.ts
-├── hooks/                        # カスタムReact Hooks
-└── public/                       # 静的ファイル
-    ├── images/
-    │   ├── ingredients/          # デフォルト食材画像
-    │   └── recipes/              # レシピ画像
-    └── icons/
+│   ├── about/                    # aboutページ - サービス紹介
+│   ├── contact/                  # お問い合わせページ
+│   ├── privacy/                  # プライバシーポリシーページ
+│   ├── terms/                    # サービス規約ページ
+│   └── api/                      # 外部API統合 - 食材認識APIなど
+├── features/                     # 機能別モジュール（Feature-based）- 各機能の完全な実装
+│   ├── auth/                     # 認証機能 - ログイン・登録・セッション管理
+│   │   ├── components/           # 認証フォーム、ガードコンポーネント
+│   │   ├── actions/              # 認証関連のServer Actions
+│   │   ├── types/                # 認証関連の型定義
+│   │   └── hooks/                # 認証状態管理フック
+│   ├── ingredients/              # 食材管理機能 - 登録・編集・写真認識・期限管理
+│   │   ├── components/           # 食材リスト、カード、フォーム、スキャナー
+│   │   ├── actions/              # 食材CRUD操作のServer Actions
+│   │   ├── types/                # 食材データの型定義
+│   │   └── hooks/                # 食材データ取得・操作フック
+│   ├── meal-planning/            # 献立プランニング機能 - AI推奨・週間カレンダー
+│   │   ├── components/           # 献立プランナー、カレンダー、栄養サマリー
+│   │   ├── actions/              # 献立作成・更新のServer Actions
+│   │   ├── types/                # 献立・レシピの型定義
+│   │   └── hooks/                # 献立データ管理・AI連携フック
+│   ├── shopping/                 # 買い物リスト機能 - 自動生成・共有・チェック
+│   │   ├── components/           # 買い物リスト、アイテム、自動生成機能
+│   │   ├── actions/              # 買い物リスト操作のServer Actions
+│   │   ├── types/                # 買い物リストの型定義
+│   │   └── hooks/                # 買い物リストデータ管理フック
+│   ├── recipes/                  # レシピ機能 - 検索・フィルタ・詳細表示
+│   │   ├── components/           # レシピ検索、カード、詳細、フィルター
+│   │   ├── actions/              # レシピ検索・取得のServer Actions
+│   │   ├── types/                # レシピデータの型定義
+│   │   └── hooks/                # レシピデータ取得・検索フック
+│   ├── family/                   # 家族共有機能 - メンバー管理・設定共有
+│   │   ├── components/           # 家族設定、メンバー管理、共有設定
+│   │   ├── actions/              # 家族データ管理のServer Actions
+│   │   ├── types/                # 家族・メンバーの型定義
+│   │   └── hooks/                # 家族データ管理フック
+│   └── about/                    # aboutページ機能 - サービス紹介・説明
+│       ├── components/           # aboutページ専用コンポーネント
+│       │   ├── sections/         # ヒーロー、機能紹介、使い方セクション
+│       │   ├── cards/            # 機能カード、使い方カード
+│       │   └── ui/               # ステップ矢印などのUI要素
+│       └── types/                # aboutページの型定義
+├── shared/                       # 共通モジュール - 複数機能で使用する汎用コンポーネント
+│   ├── components/               # 機能横断で使用するコンポーネント
+│   │   ├── ui/                   # shadcn/ui + カスタムUI - Button, Card, Input等
+│   │   └── layout/               # レイアウトコンポーネント - Header, Footer, Nav
+│   ├── hooks/                    # 共通カスタムフック - localStorage, debounce, API等
+│   └── types/                    # 共通型定義 - API response, common interfaces
+├── lib/                          # ユーティリティとヘルパー - 共通ライブラリ機能
+│   ├── services/                 # 外部サービス統合 - API連携・SDK
+│   │   ├── aws/                  # AWS SDK統合 - S3, Cognito, RDS
+│   │   ├── image-recognition/    # 食材認識API - 写真解析サービス
+│   │   └── recommendation/       # 献立推奨エンジン - AI・機械学習
+│   ├── db/                       # データベース関連 - ORM・クエリ・スキーマ
+│   │   ├── schema/               # データベーススキーマ定義
+│   │   ├── queries/              # 共通クエリ関数
+│   │   └── migrations/           # データベースマイグレーション
+│   ├── validations/              # Zodスキーマ - バリデーションルール
+│   └── utils/                    # ユーティリティ関数 - 汎用ヘルパー
+└── public/                       # 静的ファイル - 画像、アイコン、フォント
+    ├── images/                   # 一般画像 - ロゴ、背景画像
+    │   ├── ingredients/          # デフォルト食材画像 - 食材アイコン・写真
+    │   └── recipes/              # レシピ画像 - 料理写真・サムネイル
+    ├── icons/                    # アイコンファイル - SVG、PNG
+    └── about/                    # aboutページ専用画像 - ヒーロー画像、ステップ画像
 ```
 
 ### 3. データハンドリング
