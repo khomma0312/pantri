@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const HeroSection = () => (
   <section
@@ -8,13 +9,13 @@ export const HeroSection = () => (
     <div className="bg-black/30 absolute inset-0 rounded-lg"></div>
     <div className="relative max-w-4xl">
       <h1 className="text-3xl font-black tracking-tighter mb-2 lg:text-5xl">
-        食品ロスを削減するスマートな食事プラン
+        毎日の献立作りをもっとシンプルに
       </h1>
       <p className="text-base font-normal mb-6">
-        Pantriは、食品ロスを削減し、バランスのとれた食事を提案する、食事プランと食品管理ウェブアプリです。
+        食材管理から買い物リストまで自動化。献立に悩む時間を減らします。
       </p>
       <Button className="text-xl font-medium px-10 py-6 rounded-lg text-primary-foreground">
-        今すぐ試す
+        <Link href="/signup">今すぐ試す</Link>
       </Button>
     </div>
   </section>
