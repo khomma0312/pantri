@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "@/shared/components/ui/button";
 
 export const Header = () => (
   <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg">

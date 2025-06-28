@@ -1,4 +1,4 @@
-import { FeatureCard } from "@/components/feature-card";
+import { FeatureCard } from "@/shared/components/ui/feature-card";
 
 export const FeaturesSection = () => (
   <section className="py-10">

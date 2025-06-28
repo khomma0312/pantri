@@ -1,9 +1,9 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { HeroSection } from "./components/hero-section";
-import { FeaturesSection } from "./components/features-section";
-import { HowToUseSection } from "./components/how-to-use-section";
-import { ProblemSolvingSection } from "./components/problem-solving-section";
+import { Header } from "@/shared/components/layout/header";
+import { Footer } from "@/shared/components/layout/footer";
+import { HeroSection } from "@/features/about/components/hero-section";
+import { FeaturesSection } from "@/features/about/components/features-section";
+import { HowToUseSection } from "@/features/about/components/how-to-use-section";
+import { ProblemSolvingSection } from "@/features/about/components/problem-solving-section";
 
 export default function AboutPage() {
   return (

@@ -1,4 +1,4 @@
-import { HowToUseCard } from "@/components/how-to-use-card";
+import { HowToUseCard } from "@/shared/components/ui/how-to-use-card";
 import { StepArrowColumn } from "./step-arrow-column";
 
 export const HowToUseSection = () => (
